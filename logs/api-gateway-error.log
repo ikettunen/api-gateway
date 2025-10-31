@@ -1,0 +1,60 @@
+2025-10-28T19:53:14: (node:14472) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T19:53:14: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T19:56:50: (node:24016) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T19:56:50: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:08:03: (node:12332) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:08:03: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:08:03: [HPM] Error occurred while proxying request localhost:3001/api/debug/health to http://localhost:3008/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-10-28T20:08:54: [HPM] Error occurred while proxying request localhost:3001/api/debug/health to http://localhost:3008/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-10-28T20:10:13: (node:22412) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:10:13: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:10:13: [HPM] Error occurred while proxying request localhost:3001/api?page=1&limit=5 to http://localhost:3008/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-10-28T20:10:13: [HPM] Error occurred while proxying request localhost:3001/api?page=1&limit=5 to http://localhost:3008/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-10-28T20:26:10: (node:20284) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:26:10: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:28:51: (node:22636) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:28:51: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:31:14: (node:15756) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:31:14: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:32:52: (node:23044) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:32:52: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:39:14: (node:5972) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:39:14: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:40:41: (node:17096) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:40:41: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T20:42:08: (node:15720) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T20:42:08: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T21:06:41: (node:24336) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T21:06:41: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T21:46:03: (node:13792) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T21:46:03: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T22:03:52: (node:21336) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T22:03:52: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T22:14:23: (node:11292) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T22:14:23: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T23:02:49: (node:3624) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T23:02:49: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T23:11:25: (node:3992) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T23:11:25: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-28T23:18:21: (node:908) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-28T23:18:21: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-29T09:44:07: (node:11172) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-29T09:44:07: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-29T17:12:52: (node:5280) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-29T17:12:52: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-29T17:42:46: (node:3200) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-29T17:42:46: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-29T17:47:46: [HPM] ECONNRESET: Error: read ECONNRESET
+2025-10-29T17:47:46:     at TCP.onStreamRead (node:internal/stream_base_commons:216:20) {
+2025-10-29T17:47:46:   errno: -4077,
+2025-10-29T17:47:46:   code: 'ECONNRESET',
+2025-10-29T17:47:46:   syscall: 'read'
+2025-10-29T17:47:46: }
+2025-10-29T17:47:46: [HPM] Error occurred while proxying request localhost:3001/api/fitbit/link to http://localhost:3010/ [ECONNRESET] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-10-29T18:07:00: [HPM] Error occurred while proxying request localhost:3001/api/fitbit/link to http://localhost:3010/ [ECONNRESET] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-10-29T18:44:50: (node:8996) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-29T18:44:50: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-29T18:46:08: (node:20352) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-29T18:46:08: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-10-30T02:21:00: (node:24208) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-10-30T02:21:00: (Use `node --trace-deprecation ...` to show where the warning was created)
