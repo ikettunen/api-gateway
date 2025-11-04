@@ -35,7 +35,7 @@ env:
   ECR_REPOSITORY: nursing-home-repo           # set this to your Amazon ECR repository name
   ECS_SERVICE: nursing-home-api-service-p7up7p1x                 # set this to your Amazon ECS service name
   ECS_CLUSTER: able-bear-gteeoe                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: nursing-home-api:1     # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: nursing-home-api:2     # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: api-gateway           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
