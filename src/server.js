@@ -218,6 +218,8 @@ serviceRoutes.forEach(route => {
     pathRewrite: route.pathRewrite || {
       [`^${route.url}`]: '/api', // Default rewrite path
     },
+    timeout: 120000, // 120 second timeout
+    proxyTimeout: 120000, // 120 second proxy timeout
     logLevel: process.env.NODE_ENV === 'development' ? 'debug' : 'warn',
     onProxyReq: (proxyReq, req, res) => {
       // Add original user info if available
@@ -225,15 +227,16 @@ serviceRoutes.forEach(route => {
         proxyReq.setHeader('X-User-ID', req.user.sub);
         proxyReq.setHeader('X-User-Role', req.user.role);
       }
+      logger.info(`Proxying ${req.method} ${req.path} to ${route.target}`);
     },
     onProxyRes: (proxyRes, req, res) => {
       // Log response
-      logger.debug(`${req.method} ${req.path} -> ${proxyRes.statusCode}`);
+      logger.info(`${req.method} ${req.path} -> ${route.target} returned ${proxyRes.statusCode}`);
     },
     onError: (err, req, res) => {
       // Handle proxy errors
-      logger.error(`Proxy error: ${err.message}`);
-      res.status(500).json({ error: 'Service unavailable' });
+      logger.error(`Proxy error for ${req.method} ${req.path} to ${route.target}: ${err.message}`);
+      res.status(500).json({ error: 'Service unavailable', details: err.message });
     }
   };
 
