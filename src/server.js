@@ -43,6 +43,81 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', service: 'api-gateway' });
 });
 
+// Comprehensive health check endpoint
+app.get('/health/detailed', async (req, res) => {
+  const axios = require('axios');
+  const results = {
+    gateway: 'ok',
+    timestamp: new Date().toISOString(),
+    services: {}
+  };
+
+  logger.info('=== Starting Detailed Health Check ===');
+
+  // Test each backend service
+  const servicesToTest = [
+    { name: 'auth', url: process.env.AUTH_SERVICE_URL, endpoint: '/health' },
+    { name: 'analytics', url: process.env.ANALYTICS_SERVICE_URL, endpoint: '/health' },
+    { name: 'visits', url: process.env.VISITS_SERVICE_URL, endpoint: '/health' }
+  ];
+
+  for (const service of servicesToTest) {
+    if (!service.url) {
+      results.services[service.name] = { status: 'not_configured', url: 'N/A' };
+      logger.warn(`Service ${service.name}: NOT CONFIGURED`);
+      continue;
+    }
+
+    logger.info(`Testing ${service.name} at ${service.url}${service.endpoint}...`);
+
+    try {
+      const startTime = Date.now();
+      const response = await axios.get(`${service.url}${service.endpoint}`, {
+        timeout: 5000,
+        validateStatus: () => true // Accept any status code
+      });
+      const responseTime = Date.now() - startTime;
+
+      results.services[service.name] = {
+        status: response.status === 200 ? 'healthy' : 'unhealthy',
+        url: service.url,
+        statusCode: response.status,
+        responseTime: `${responseTime}ms`,
+        data: response.data
+      };
+
+      if (response.status === 200) {
+        logger.info(`✓ ${service.name}: HEALTHY (${responseTime}ms)`);
+      } else {
+        logger.warn(`✗ ${service.name}: UNHEALTHY - Status ${response.status} (${responseTime}ms)`);
+      }
+    } catch (error) {
+      results.services[service.name] = {
+        status: 'error',
+        url: service.url,
+        error: error.code || error.message,
+        details: error.message
+      };
+
+      logger.error(`✗ ${service.name}: ERROR - ${error.code || error.message}`);
+      logger.error(`  Details: ${error.message}`);
+    }
+  }
+
+  // Determine overall health
+  const allHealthy = Object.values(results.services).every(
+    s => s.status === 'healthy' || s.status === 'not_configured'
+  );
+
+  const healthyCount = Object.values(results.services).filter(s => s.status === 'healthy').length;
+  const totalCount = Object.keys(results.services).length;
+
+  logger.info(`=== Health Check Complete: ${healthyCount}/${totalCount} services healthy ===`);
+
+  const statusCode = allHealthy ? 200 : 503;
+  res.status(statusCode).json(results);
+});
+
 // Service discovery (static configuration)
 const serviceRoutes = [
   {
@@ -188,8 +263,9 @@ app.use((err, req, res, next) => {
 
 // Start server
 const port = process.env.PORT || 3001;
-app.listen(port, () => {
-  logger.info(`API Gateway listening at http://localhost:${port}`);
+const host = process.env.HOST || '0.0.0.0';
+app.listen(port, host, () => {
+  logger.info(`API Gateway listening at http://${host}:${port}`);
 });
 
 module.exports = app; // For testing

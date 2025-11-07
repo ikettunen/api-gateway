@@ -1,0 +1,98 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:412235697758:task-definition/nursing-home-api:3",
+    "containerDefinitions": [
+        {
+            "name": "api-gateway",
+            "image": "nursing-home-repo/api-gateway:540dc1b264ae0f21c5d781bcc4a7bd528e0352d8",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 3001,
+                    "hostPort": 3001,
+                    "protocol": "tcp",
+                    "name": "api-gateway-3001-tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "AUTH_SERVICE_URL",
+                    "value": "http://localhost:3002"
+                },
+                {
+                    "name": "NODE_ENV",
+                    "value": "production"
+                },
+                {
+                    "name": "PORT",
+                    "value": "3001"
+                },
+                {
+                    "name": "JWS_SECRET",
+                    "value": "your_super_secret_jwt_key_here_make_it_long_and_secure"
+                },
+                {
+                    "name": "CORS_ORIGIN",
+                    "value": "http://http://51.20.126.53"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/nursing-home-api",
+                    "awslogs-create-group": "true",
+                    "awslogs-region": "eu-north-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "nursing-home-api",
+    "executionRoleArn": "arn:aws:iam::412235697758:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 3,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "MANAGED_INSTANCES",
+        "FARGATE"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2025-11-04T16:04:30.461000+02:00",
+    "registeredBy": "arn:aws:iam::412235697758:root",
+    "enableFaultInjection": false
+}

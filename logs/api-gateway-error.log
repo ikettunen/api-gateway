@@ -58,3 +58,27 @@
 2025-10-29T18:46:08: (Use `node --trace-deprecation ...` to show where the warning was created)
 2025-10-30T02:21:00: (node:24208) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
 2025-10-30T02:21:00: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-07T17:20:49: (node:19952) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-07T17:20:49: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-07T17:24:22: Error: Cannot find module 'axios'
+2025-11-07T17:24:22: Require stack:
+2025-11-07T17:24:22: - C:\Users\ikett\Kouluprojekti\api-gateway\src\server.js
+2025-11-07T17:24:22:     at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+2025-11-07T17:24:22:     at Hook._require.Module.require (C:\Users\ikett\AppData\Roaming\npm\node_modules\pm2\node_modules\require-in-the-middle\index.js:81:25)
+2025-11-07T17:24:22:     at require (node:internal/modules/helpers:147:16)
+2025-11-07T17:24:22:     at C:\Users\ikett\Kouluprojekti\api-gateway\src\server.js:48:17
+2025-11-07T17:24:22:     at Layer.handle [as handle_request] (C:\Users\ikett\Kouluprojekti\api-gateway\node_modules\express\lib\router\layer.js:95:5)
+2025-11-07T17:24:22:     at next (C:\Users\ikett\Kouluprojekti\api-gateway\node_modules\express\lib\router\route.js:149:13)
+2025-11-07T17:24:22:     at Route.dispatch (C:\Users\ikett\Kouluprojekti\api-gateway\node_modules\express\lib\router\route.js:119:3)
+2025-11-07T17:24:22:     at Layer.handle [as handle_request] (C:\Users\ikett\Kouluprojekti\api-gateway\node_modules\express\lib\router\layer.js:95:5)
+2025-11-07T17:24:22:     at C:\Users\ikett\Kouluprojekti\api-gateway\node_modules\express\lib\router\index.js:284:15
+2025-11-07T17:24:22:     at Function.process_params (C:\Users\ikett\Kouluprojekti\api-gateway\node_modules\express\lib\router\index.js:346:12) {
+2025-11-07T17:24:22:   code: 'MODULE_NOT_FOUND',
+2025-11-07T17:24:22:   requireStack: [ 'C:\\Users\\ikett\\Kouluprojekti\\api-gateway\\src\\server.js' ]
+2025-11-07T17:24:22: }
+2025-11-07T17:36:37: (node:13256) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-07T17:36:37: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-07T17:40:23: (node:28592) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-07T17:40:23: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-07T17:52:35: (node:24832) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-07T17:52:35: (Use `node --trace-deprecation ...` to show where the warning was created)
