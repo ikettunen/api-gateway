@@ -23,7 +23,8 @@ app.use(cors({
   credentials: true
 })); // Enable CORS
 app.use(compression()); // Compress responses
-app.use(express.json()); // Parse JSON bodies
+// NOTE: express.json() removed - it consumes the body stream before proxy can forward it
+// app.use(express.json()); // Parse JSON bodies
 app.use(expressLogger); // Request logging
 
 // Rate limiting (disabled for development)
@@ -41,6 +42,92 @@ app.use(limiter);
 // Health check endpoint (no auth required)
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', service: 'api-gateway' });
+});
+
+// API health check endpoint (for ALB routing)
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok', service: 'api-gateway' });
+});
+
+// Startup logs endpoint - generates logs on demand
+app.get('/api/startup-logs', (req, res) => {
+  const fs = require('fs');
+  const path = require('path');
+  const { execSync } = require('child_process');
+  
+  try {
+    let logs = '';
+    
+    logs += '=== Service Startup Diagnostics ===\n';
+    logs += `Timestamp: ${new Date().toISOString()}\n\n`;
+    
+    logs += '=== Environment Variables (API Gateway) ===\n';
+    logs += `NODE_ENV: ${process.env.NODE_ENV || 'not set'}\n`;
+    logs += `PORT: ${process.env.PORT || 'not set'}\n`;
+    logs += `CORS_ORIGIN: ${process.env.CORS_ORIGIN || 'not set'}\n`;
+    logs += `AUTH_SERVICE_URL: ${process.env.AUTH_SERVICE_URL || 'not set'}\n`;
+    logs += `FHIR_SERVICE_URL: ${process.env.FHIR_SERVICE_URL || 'not set'}\n`;
+    logs += `VISITS_SERVICE_URL: ${process.env.VISITS_SERVICE_URL || 'not set'}\n`;
+    logs += `ANALYTICS_SERVICE_URL: ${process.env.ANALYTICS_SERVICE_URL || 'not set'}\n`;
+    logs += `FITBIT_SERVICE_URL: ${process.env.FITBIT_SERVICE_URL || 'not set'}\n\n`;
+    
+    logs += '=== Service .env Files ===\n';
+    const services = ['api-gateway', 'auth-service', 'fhir-api-backend', 'visits-service', 'analytics-service', 'fitbit-service'];
+    for (const service of services) {
+      // Try multiple possible paths
+      const possiblePaths = [
+        path.join(__dirname, `../../../${service}/.env`),  // From api-gateway/src
+        path.join(__dirname, `../../${service}/.env`),     // One level up
+        path.join(process.cwd(), `../${service}/.env`),    // From workspace root
+        path.join(process.cwd(), `${service}/.env`)        // Direct from cwd
+      ];
+      
+      let envPath = null;
+      for (const p of possiblePaths) {
+        if (fs.existsSync(p)) {
+          envPath = p;
+          break;
+        }
+      }
+      
+      if (envPath) {
+        logs += `--- ${service}/.env (${envPath}) ---\n`;
+        const envContent = fs.readFileSync(envPath, 'utf8');
+        // Filter out sensitive data
+        const filtered = envContent.split('\n')
+          .filter(line => !line.match(/PASSWORD|SECRET|KEY|TOKEN/i) || line.startsWith('#'))
+          .join('\n');
+        logs += filtered + '\n\n';
+      } else {
+        logs += `--- ${service}/.env --- NOT FOUND (tried ${possiblePaths.length} paths)\n\n`;
+      }
+    }
+    
+    logs += '=== PM2 Status ===\n';
+    try {
+      const pm2Status = execSync('pm2 jlist', { encoding: 'utf8' });
+      const processes = JSON.parse(pm2Status);
+      processes.forEach(proc => {
+        logs += `${proc.name}: ${proc.pm2_env.status} (restarts: ${proc.pm2_env.restart_time})\n`;
+      });
+    } catch (e) {
+      logs += 'PM2 not available or error reading status\n';
+    }
+    logs += '\n';
+    
+    logs += '=== Network Ports ===\n';
+    try {
+      const netstat = execSync('netstat -tlnp 2>/dev/null | grep -E ":(3001|3002|3003|3004|3006|3008|5002|8080)" || ss -tlnp | grep -E ":(3001|3002|3003|3004|3006|3008|5002|8080)"', { encoding: 'utf8' });
+      logs += netstat || 'No services listening on expected ports\n';
+    } catch (e) {
+      logs += 'Could not check network ports\n';
+    }
+    
+    res.json({ success: true, logs });
+  } catch (error) {
+    logger.error('Error generating startup logs:', error);
+    res.status(500).json({ success: false, error: error.message });
+  }
 });
 
 // Comprehensive health check endpoint
@@ -123,13 +210,20 @@ const serviceRoutes = [
   {
     url: '/api/auth',
     target: process.env.AUTH_SERVICE_URL || 'http://localhost:3000',
-    public: true // Auth endpoints don't require authentication
+    public: true, // Auth endpoints don't require authentication
+    pathRewrite: {} // Don't rewrite the path - keep it as /api/auth
   },
   {
     url: '/api/patients',
     target: process.env.PATIENT_SERVICE_URL || 'http://localhost:8080',
     public: true, // Allow access for testing
     pathRewrite: {} // Don't rewrite the path - keep it as /api/patients
+  },
+  {
+    url: '/api/db',
+    target: process.env.PATIENT_SERVICE_URL || 'http://localhost:8080',
+    public: true, // Allow access for database management
+    pathRewrite: {} // Don't rewrite the path - keep it as /api/db
   },
   {
     url: '/api/staff',
@@ -161,6 +255,12 @@ const serviceRoutes = [
   },
   {
     url: '/api/visits',
+    target: process.env.VISITS_SERVICE_URL || 'http://localhost:3008',
+    public: false,
+    pathRewrite: {} // Empty pathRewrite to preserve the full path
+  },
+  {
+    url: '/api/visit-templates',
     target: process.env.VISITS_SERVICE_URL || 'http://localhost:3008',
     public: false,
     pathRewrite: {} // Empty pathRewrite to preserve the full path
