@@ -287,9 +287,13 @@ const serviceRoutes = [
     url: '/api/fitbit',
     target: process.env.FITBIT_SERVICE_URL || 'http://localhost:3010',
     public: false,
-    pathRewrite: {
-      '^/api/fitbit': '/api/fitbit'
-    }
+    pathRewrite: {} // Empty pathRewrite to preserve the full path
+  },
+  {
+    url: '/api/oura',
+    target: process.env.OURA_SERVICE_URL || 'http://localhost:3011',
+    public: false,
+    pathRewrite: {} // Empty pathRewrite to preserve the full path
   },
   {
     url: '/api/uploads',

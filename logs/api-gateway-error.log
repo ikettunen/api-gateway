@@ -822,3 +822,7 @@
 2025-11-16T19:10:30: [HPM] Error occurred while proxying request localhost:3001/api/analytics/dashboard/stats to http://localhost:5002/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
 2025-11-18T16:56:42: (node:28336) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
 2025-11-18T16:56:42: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-24T15:15:58: (node:20348) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-24T15:15:58: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-24T16:00:26: (node:23092) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-24T16:00:26: (Use `node --trace-deprecation ...` to show where the warning was created)
