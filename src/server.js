@@ -214,21 +214,20 @@ const serviceRoutes = [
     pathRewrite: {} // Don't rewrite the path - keep it as /api/auth
   },
   {
-    url: '/api/patients',
-    target: process.env.PATIENT_SERVICE_URL || 'http://localhost:8080',
-    public: true, // Allow access for testing
-    pathRewrite: {} // Don't rewrite the path - keep it as /api/patients
-  },
-  {
-    url: '/api/db',
-    target: process.env.PATIENT_SERVICE_URL || 'http://localhost:8080',
-    public: true, // Allow access for database management
-    pathRewrite: {} // Don't rewrite the path - keep it as /api/db
+    url: '/api/fhir',
+    target: process.env.FHIR_SERVICE_URL || 'http://localhost:8080',
+    public: true,
+    pathRewrite: {
+      '^/api/fhir': '/api'
+    }
   },
   {
     url: '/api/staff',
-    target: process.env.STAFF_SERVICE_URL || 'http://localhost:3002',
-    public: false
+    target: process.env.STAFF_SERVICE_URL || 'http://localhost:6001',
+    public: false,
+    pathRewrite: {
+      '^/api/staff': '/api'
+    }
   },
   {
     url: '/api/medical-records',
@@ -273,6 +272,12 @@ const serviceRoutes = [
   },
   {
     url: '/api/mongo',
+    target: process.env.VISITS_SERVICE_URL || 'http://localhost:3008',
+    public: false,
+    pathRewrite: {} // Empty pathRewrite to preserve the full path
+  },
+  {
+    url: '/api/care-plans',
     target: process.env.VISITS_SERVICE_URL || 'http://localhost:3008',
     public: false,
     pathRewrite: {} // Empty pathRewrite to preserve the full path

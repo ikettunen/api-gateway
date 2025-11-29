@@ -826,3 +826,19 @@
 2025-11-24T15:15:58: (Use `node --trace-deprecation ...` to show where the warning was created)
 2025-11-24T16:00:26: (node:23092) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
 2025-11-24T16:00:26: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-24T16:02:10: (node:9748) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-24T16:02:10: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-25T10:45:57: (node:6000) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-25T10:45:57: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-25T11:26:43: [HPM] Error occurred while proxying request localhost:3001/api/seed to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-11-26T13:50:49: (node:13108) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-26T13:50:49: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-29T09:56:08: (node:33032) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-29T09:56:08: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-29T09:59:16: The system cannot find the path specified.
+2025-11-29T10:02:24: (node:33136) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-29T10:02:24: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-29T12:23:16: (node:8536) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-29T12:23:16: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-29T12:47:49: (node:23436) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-11-29T12:47:49: (Use `node --trace-deprecation ...` to show where the warning was created)
