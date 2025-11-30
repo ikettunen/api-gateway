@@ -1,4 +1,7 @@
 const express = require('express');
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -250,7 +253,10 @@ const serviceRoutes = [
   {
     url: '/api/notifications',
     target: process.env.NOTIFICATIONS_SERVICE_URL || 'http://localhost:3006',
-    public: false
+    public: false,
+    pathRewrite: {
+      '^/api/notifications': ''
+    }
   },
   {
     url: '/api/visits',
@@ -375,9 +381,30 @@ app.use((err, req, res, next) => {
 
 // Start server
 const port = process.env.PORT || 3001;
+const httpsPort = process.env.HTTPS_PORT || 443;
 const host = process.env.HOST || '0.0.0.0';
+
+// Start HTTP server
 app.listen(port, host, () => {
-  logger.info(`API Gateway listening at http://${host}:${port}`);
+  logger.info(`API Gateway (HTTP) listening at http://${host}:${port}`);
 });
+
+// Start HTTPS server if SSL certificates are available
+const sslKeyPath = process.env.SSL_KEY_PATH || '/etc/ssl/api-gateway.key';
+const sslCertPath = process.env.SSL_CERT_PATH || '/etc/ssl/api-gateway.crt';
+
+if (fs.existsSync(sslKeyPath) && fs.existsSync(sslCertPath)) {
+  const httpsOptions = {
+    key: fs.readFileSync(sslKeyPath),
+    cert: fs.readFileSync(sslCertPath)
+  };
+  
+  https.createServer(httpsOptions, app).listen(httpsPort, host, () => {
+    logger.info(`API Gateway (HTTPS) listening at https://${host}:${httpsPort}`);
+  });
+} else {
+  logger.warn('SSL certificates not found. HTTPS server not started.');
+  logger.warn(`Looking for: ${sslKeyPath} and ${sslCertPath}`);
+}
 
 module.exports = app; // For testing
