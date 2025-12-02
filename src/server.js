@@ -52,6 +52,32 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', service: 'api-gateway' });
 });
 
+// Site data endpoint - serves the site.json configuration
+app.get('/api/site-data', (req, res) => {
+  try {
+    // Load site.json from the data directory
+    const siteDataPath = path.join(__dirname, '../data/site.json');
+    
+    if (fs.existsSync(siteDataPath)) {
+      const siteData = JSON.parse(fs.readFileSync(siteDataPath, 'utf8'));
+      logger.info(`Site data loaded from: ${siteDataPath}`);
+      res.json(siteData);
+    } else {
+      logger.warn(`Site data file not found at: ${siteDataPath}`);
+      res.status(404).json({ 
+        error: 'Site data not found',
+        expectedPath: siteDataPath
+      });
+    }
+  } catch (error) {
+    logger.error('Error loading site data:', error);
+    res.status(500).json({ 
+      error: 'Failed to load site data',
+      details: error.message 
+    });
+  }
+});
+
 // Startup logs endpoint - generates logs on demand
 app.get('/api/startup-logs', (req, res) => {
   const fs = require('fs');

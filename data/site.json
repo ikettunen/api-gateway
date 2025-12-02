@@ -1,0 +1,439 @@
+{
+  "sites": [
+    {
+      "id": "site-001",
+      "name": "Sunrise Care Home",
+      "address": "123 Healthcare Avenue, Helsinki, 00100",
+      "phone": "+358 9 1234 5678"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room-101",
+      "room_number": "101",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "A",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-102",
+      "room_number": "102",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "A",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-103",
+      "room_number": "103",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "A",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-104",
+      "room_number": "104",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "A",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-105",
+      "room_number": "105",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "B",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-106",
+      "room_number": "106",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "B",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-107",
+      "room_number": "107",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "B",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-108",
+      "room_number": "108",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "B",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-109",
+      "room_number": "109",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "C",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-110",
+      "room_number": "110",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "C",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-111",
+      "room_number": "111",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "C",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-112",
+      "room_number": "112",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "C",
+      "capacity": 1,
+      "current_occupancy": 1,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-113",
+      "room_number": "113",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "C",
+      "capacity": 1,
+      "current_occupancy": 0,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-114",
+      "room_number": "114",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "C",
+      "capacity": 1,
+      "current_occupancy": 0,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    },
+    {
+      "id": "room-115",
+      "room_number": "115",
+      "site_id": "site-001",
+      "floor": 1,
+      "wing": "C",
+      "capacity": 1,
+      "current_occupancy": 0,
+      "room_type": "single",
+      "features": ["private_bathroom", "window"]
+    }
+  ],
+  "staff": [
+    {
+      "id": "staff-1001",
+      "employee_id": 1001,
+      "first_name": "Anna",
+      "last_name": "Virtanen",
+      "email": "anna.virtanen@hoitokoti.fi",
+      "phone": "040-1234567",
+      "role": "nurse",
+      "job_title": "Sairaanhoitaja",
+      "site_id": "site-001",
+      "shift_preference": "morning",
+      "auth_user_id": "user_1001"
+    },
+    {
+      "id": "staff-1006",
+      "employee_id": 1006,
+      "first_name": "Sari",
+      "last_name": "Koskinen",
+      "email": "sari.koskinen@hoitokoti.fi",
+      "phone": "040-6789012",
+      "role": "nurse",
+      "job_title": "Sairaanhoitaja",
+      "site_id": "site-001",
+      "shift_preference": "morning",
+      "auth_user_id": "user_1006"
+    },
+    {
+      "id": "staff-1013",
+      "employee_id": 1013,
+      "first_name": "Eero",
+      "last_name": "Laaksonen",
+      "email": "eero.laaksonen@hoitokoti.fi",
+      "phone": "040-3344556",
+      "role": "nurse",
+      "job_title": "Sairaanhoitaja",
+      "site_id": "site-001",
+      "shift_preference": "day",
+      "auth_user_id": "user_1013"
+    },
+    {
+      "id": "staff-1015",
+      "employee_id": 1015,
+      "first_name": "Laura",
+      "last_name": "Virtamo",
+      "email": "laura.virtamo@hoitokoti.fi",
+      "phone": "040-5566778",
+      "role": "nurse",
+      "job_title": "Sairaanhoitaja",
+      "site_id": "site-001",
+      "shift_preference": "day",
+      "auth_user_id": "user_1015"
+    },
+    {
+      "id": "staff-1016",
+      "employee_id": 1016,
+      "first_name": "Mika",
+      "last_name": "Saarinen",
+      "email": "mika.saarinen@hoitokoti.fi",
+      "phone": "040-6677889",
+      "role": "nurse",
+      "job_title": "Sairaanhoitaja",
+      "site_id": "site-001",
+      "shift_preference": "night",
+      "auth_user_id": "user_1016"
+    },
+    {
+      "id": "staff-1017",
+      "employee_id": 1017,
+      "first_name": "Tiina",
+      "last_name": "Aho",
+      "email": "tiina.aho@hoitokoti.fi",
+      "phone": "040-7788990",
+      "role": "nurse",
+      "job_title": "Sairaanhoitaja",
+      "site_id": "site-001",
+      "shift_preference": "night",
+      "auth_user_id": "user_1017"
+    },
+    {
+      "id": "staff-1003",
+      "employee_id": 1003,
+      "first_name": "Jukka",
+      "last_name": "Mäkinen",
+      "email": "jukka.makinen@hoitokoti.fi",
+      "phone": "040-3456789",
+      "role": "doctor",
+      "job_title": "Lääkäri",
+      "site_id": "site-001",
+      "work_schedule": "Mon-Fri 10:00-16:00",
+      "auth_user_id": "user_1003"
+    },
+    {
+      "id": "staff-1004",
+      "employee_id": 1004,
+      "first_name": "Maria",
+      "last_name": "Nieminen",
+      "email": "maria.nieminen@hoitokoti.fi",
+      "phone": "040-4567890",
+      "role": "head_nurse",
+      "job_title": "Osastonhoitaja",
+      "site_id": "site-001",
+      "work_schedule": "Mon-Fri 08:00-18:00",
+      "auth_user_id": "user_1004"
+    },
+    {
+      "id": "staff-1005",
+      "employee_id": 1005,
+      "first_name": "Pekka",
+      "last_name": "Laine",
+      "email": "pekka.laine@hoitokoti.fi",
+      "phone": "040-5678901",
+      "role": "physiotherapist",
+      "job_title": "Fysioterapeutti",
+      "site_id": "site-001",
+      "work_schedule": "On-demand / Appointments",
+      "auth_user_id": "user_1005"
+    },
+    {
+      "id": "staff-1002",
+      "employee_id": 1002,
+      "first_name": "Liisa",
+      "last_name": "Korhonen",
+      "email": "liisa.korhonen@hoitokoti.fi",
+      "phone": "040-2345678",
+      "role": "caregiver",
+      "job_title": "Hoitaja (ei pätevöitynyt)",
+      "site_id": "site-001",
+      "shift_preference": "morning",
+      "auth_user_id": "user_1002"
+    },
+    {
+      "id": "staff-1007",
+      "employee_id": 1007,
+      "first_name": "Mikko",
+      "last_name": "Heikkinen",
+      "email": "mikko.heikkinen@hoitokoti.fi",
+      "phone": "040-7890123",
+      "role": "caregiver",
+      "job_title": "Hoitaja (ei pätevöitynyt)",
+      "site_id": "site-001",
+      "shift_preference": "day",
+      "auth_user_id": "user_1007"
+    },
+    {
+      "id": "staff-1018",
+      "employee_id": 1018,
+      "first_name": "Kari",
+      "last_name": "Mäenpää",
+      "email": "kari.maenpaa@hoitokoti.fi",
+      "phone": "040-8899001",
+      "role": "janitor",
+      "job_title": "Talonmies",
+      "site_id": "site-001",
+      "work_schedule": "Mon-Fri 07:00-15:00",
+      "auth_user_id": "user_1018"
+    },
+    {
+      "id": "staff-1019",
+      "employee_id": 1019,
+      "first_name": "Tuula",
+      "last_name": "Virtanen",
+      "email": "tuula.virtanen@hoitokoti.fi",
+      "phone": "040-9900112",
+      "role": "cook_cleaner",
+      "job_title": "Keittäjä/Siivooja",
+      "site_id": "site-001",
+      "work_schedule": "Mon-Sun 06:00-18:00",
+      "auth_user_id": "user_1019",
+      "responsibilities": ["breakfast_preparation", "lunch_preparation", "cleaning", "kitchen_maintenance"]
+    }
+  ],
+  "shift_schedule": {
+    "week_template": {
+      "monday": {
+        "morning": ["staff-1001", "staff-1006"],
+        "day": ["staff-1013", "staff-1015"],
+        "night": ["staff-1016", "staff-1017"]
+      },
+      "tuesday": {
+        "morning": ["staff-1001", "staff-1006"],
+        "day": ["staff-1013", "staff-1015"],
+        "night": ["staff-1016", "staff-1017"]
+      },
+      "wednesday": {
+        "morning": ["staff-1001", "staff-1006"],
+        "day": ["staff-1013", "staff-1015"],
+        "night": ["staff-1016", "staff-1017"]
+      },
+      "thursday": {
+        "morning": ["staff-1001", "staff-1006"],
+        "day": ["staff-1013", "staff-1015"],
+        "night": ["staff-1016", "staff-1017"]
+      },
+      "friday": {
+        "morning": ["staff-1001", "staff-1006"],
+        "day": ["staff-1013", "staff-1015"],
+        "night": ["staff-1016", "staff-1017"]
+      },
+      "saturday": {
+        "morning": ["staff-1001", "staff-1006"],
+        "day": ["staff-1013", "staff-1015"],
+        "night": ["staff-1016", "staff-1017"]
+      },
+      "sunday": {
+        "morning": ["staff-1001", "staff-1006"],
+        "day": ["staff-1013", "staff-1015"],
+        "night": ["staff-1016", "staff-1017"]
+      }
+    },
+    "day_workers": {
+      "monday": {
+        "doctor_hours": ["staff-1003"],
+        "head_nurse_hours": ["staff-1004"],
+        "janitor_hours": ["staff-1018"],
+        "cook_cleaner_hours": ["staff-1019"]
+      },
+      "tuesday": {
+        "doctor_hours": ["staff-1003"],
+        "head_nurse_hours": ["staff-1004"],
+        "janitor_hours": ["staff-1018"],
+        "cook_cleaner_hours": ["staff-1019"]
+      },
+      "wednesday": {
+        "doctor_hours": ["staff-1003"],
+        "head_nurse_hours": ["staff-1004"],
+        "janitor_hours": ["staff-1018"],
+        "cook_cleaner_hours": ["staff-1019"]
+      },
+      "thursday": {
+        "doctor_hours": ["staff-1003"],
+        "head_nurse_hours": ["staff-1004"],
+        "janitor_hours": ["staff-1018"],
+        "cook_cleaner_hours": ["staff-1019"]
+      },
+      "friday": {
+        "doctor_hours": ["staff-1003"],
+        "head_nurse_hours": ["staff-1004"],
+        "janitor_hours": ["staff-1018"],
+        "cook_cleaner_hours": ["staff-1019"]
+      },
+      "saturday": {
+        "janitor_hours": [],
+        "cook_cleaner_hours": ["staff-1019"]
+      },
+      "sunday": {
+        "janitor_hours": [],
+        "cook_cleaner_hours": ["staff-1019"]
+      }
+    },
+    "shift_times": {
+      "morning": "06:00-14:00",
+      "day": "14:00-22:00",
+      "night": "22:00-06:00"
+    },
+    "day_worker_times": {
+      "doctor_hours": "10:00-16:00",
+      "head_nurse_hours": "08:00-18:00",
+      "janitor_hours": "07:00-15:00",
+      "cook_cleaner_hours": "06:00-18:00"
+    }
+  }
+}
