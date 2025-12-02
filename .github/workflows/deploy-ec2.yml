@@ -42,6 +42,14 @@ jobs:
         
         # Install dependencies in target directory
         cd ~/api-gateway
+        
+        # Copy production environment as .env
+        cp .env.production .env
+        
+        # Add deployment timestamp
+        echo "" >> .env
+        echo "# Last deployed: $(date -u +"%Y-%m-%d %H:%M:%S UTC") via GitHub Actions" >> .env
+        
         npm install --production
         
         echo "Deployed to ~/api-gateway"
