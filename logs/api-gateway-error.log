@@ -850,3 +850,15 @@
 2025-11-30T23:12:21: (Use `node --trace-deprecation ...` to show where the warning was created)
 2025-12-01T00:35:29: The system cannot find the path specified.
 2025-12-01T12:50:04: The system cannot find the path specified.
+2025-12-02T15:22:38: (node:30372) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-02T15:22:38: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-02T16:07:52: (node:33364) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-02T16:07:52: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-02T16:22:35: (node:36460) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-02T16:22:35: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-02T16:35:59: (node:34160) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-02T16:35:59: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-02T17:03:34: (node:37608) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-02T17:03:34: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-02T17:05:03: (node:2440) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-02T17:05:03: (Use `node --trace-deprecation ...` to show where the warning was created)

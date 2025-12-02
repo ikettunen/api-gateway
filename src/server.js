@@ -278,15 +278,19 @@ const serviceRoutes = [
   },
   {
     url: '/api/notifications',
-    target: process.env.NOTIFICATIONS_SERVICE_URL || 'http://localhost:3006',
+    target: process.env.NOTIFICATIONS_SERVICE_URL || 'http://localhost:3009',
     public: false,
-    pathRewrite: {
-      '^/api/notifications': ''
-    }
+    pathRewrite: {} // Empty pathRewrite to preserve the full path
   },
   {
     url: '/api/visits',
     target: process.env.VISITS_SERVICE_URL || 'http://localhost:3008',
+    public: false,
+    pathRewrite: {} // Empty pathRewrite to preserve the full path
+  },
+  {
+    url: '/api/medications',
+    target: process.env.FHIR_SERVICE_URL || 'http://localhost:8080',
     public: false,
     pathRewrite: {} // Empty pathRewrite to preserve the full path
   },
