@@ -47,11 +47,13 @@ jobs:
         cp .env.production .env
         
         # Add deployment timestamp (cross-platform compatible)
-        echo "" >> .env
-        echo "# Last deployed: $(date -u +'%Y-%m-%d %H:%M:%S UTC') via GitHub Actions" >> .env
-        echo "# Deployment ID: $GITHUB_RUN_ID" >> .env
-        echo "# Commit SHA: $GITHUB_SHA" >> .env
-        echo "# Commit Message: $(git log -1 --pretty=format:'%s')" >> .env
+        {
+          echo ""
+          echo "# Last deployed: $(date -u +'%Y-%m-%d %H:%M:%S UTC') via GitHub Actions"
+          echo "# Deployment ID: $GITHUB_RUN_ID"
+          echo "# Commit SHA: $GITHUB_SHA"
+          echo "# Commit Message: $(git log -1 --pretty=format:'%s' $GITHUB_SHA 2>/dev/null || echo 'No commit message available')"
+        } >> .env
         
         npm install --production
         

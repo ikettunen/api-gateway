@@ -866,3 +866,21 @@
 2025-12-02T17:05:34: (Use `node --trace-deprecation ...` to show where the warning was created)
 2025-12-02T17:05:34: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001?limit=10 to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
 2025-12-02T17:05:34: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001/unread-count to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-12-02T21:09:45: (node:20916) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-02T21:09:45: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-03T11:39:46: (node:8320) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-03T11:39:46: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-03T11:39:46: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001/unread-count to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-12-03T11:39:46: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001?limit=10 to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-12-03T17:13:45: (node:34092) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-03T17:13:45: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-03T17:16:45: (node:12152) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-03T17:16:45: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-03T17:18:45: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001?limit=10 to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-12-03T17:18:45: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001/unread-count to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-12-03T17:23:45: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001?limit=10 to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-12-03T17:23:45: [HPM] Error occurred while proxying request localhost:3001/api/notifications/recipient/user_1001/unread-count to http://localhost:3006/ [ECONNREFUSED] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+2025-12-03T18:22:45: (node:17304) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-03T18:22:45: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-12-03T19:09:45: (node:23196) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2025-12-03T19:09:45: (Use `node --trace-deprecation ...` to show where the warning was created)
